@@ -398,6 +398,18 @@ landsat_df %>%
   knitr::kable(digits = 2, 
                caption = "Mean Spectral Values by Cluster")
 
+# Create raster attribute table
+
+# Cluster 3 = Green vegetation
+# Cluster 4 = Water
+# Cluster 1 = Soil/dead grass
+# Cluster 2 = Urban
+
+# Set category labels
+levels(SB_classification_kmeans) <- data.frame(
+  cluster = 1:4,
+  landcover = c("soil/dead grass", "urban", "green vegetation", "water")
+)
 ```
 
 ## 5. Plot Results 
